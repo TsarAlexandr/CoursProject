@@ -26,16 +26,30 @@
             </div>
         </div>
         <div class="form-group">
+            <label asp-for="NeedMoney" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NeedMoney" class="form-control" />
+                <span asp-validation-for="NeedMoney" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Goal" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Goal" class="form-control" />
+                <span asp-validation-for="Goal" class="text-danger"></span>
+            </div>
+        </div>
+        @*<div class="form-group">
             <label asp-for="Status" class="col-md-2 control-label"></label>
             <div class="col-md-10">
                 <select asp-for="Status" class="form-control"></select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-        </div>
+        </div>*@
         <div class="form-group">
             <label asp-for="Category" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="Category" class="form-control"></select>
+                <select asp-for="Category" asp-items="Html.GetEnumSelectList<ECategory>()" class="form-control"></select>
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
         </div>

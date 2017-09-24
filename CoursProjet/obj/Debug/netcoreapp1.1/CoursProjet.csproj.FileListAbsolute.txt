@@ -5,7 +5,7 @@ C:\Users\Царь Александр\source\repos\CoursProjet\CoursProjet\bin\De
 C:\Users\Царь Александр\source\repos\CoursProjet\CoursProjet\obj\Debug\netcoreapp1.1\CoursProjet.csprojResolveAssemblyReference.cache
 C:\Users\Царь Александр\source\repos\CoursProjet\CoursProjet\obj\Debug\netcoreapp1.1\CoursProjet.csproj.CoreCompileInputs.cache
 C:\Users\Царь Александр\source\repos\CoursProjet\CoursProjet\obj\Debug\netcoreapp1.1\CoursProjet.AssemblyInfo.cs
-C:\Users\Царь Александр\source\repos\CoursProjet\CoursProjet\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
 C:\Users\Царь Александр\source\repos\CoursProjet\CoursProjet\bin\Debug\netcoreapp1.1\CoursProjet.pdb
 C:\Users\Царь Александр\source\repos\CoursProjet\CoursProjet\obj\Debug\netcoreapp1.1\CoursProjet.dll
 C:\Users\Царь Александр\source\repos\CoursProjet\CoursProjet\obj\Debug\netcoreapp1.1\CoursProjet.pdb
+C:\Users\Царь Александр\source\repos\CoursProjet\CoursProjet\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs

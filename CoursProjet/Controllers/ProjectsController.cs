@@ -54,7 +54,7 @@ namespace CoursProjet.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,NameProject,Date,Status,Category")] Projects projects)
+        public async Task<IActionResult> Create([Bind("ID,NameProject,Date,NeedMoney,Goal,Status,Category")] Projects projects)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace CoursProjet.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,NameProject,Date,Status,Category")] Projects projects)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,NameProject,Date,NeedMoney,Goal,Status,Category")] Projects projects)
         {
             if (id != projects.ID)
             {

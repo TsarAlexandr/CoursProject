@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,16 +12,32 @@ namespace CoursProjet.Models
         public Users Athor { get; set; }
         public string NameProject { get; set; }
         public DateTime Date { get; set; }
+        public int NeedMoney { get; set; }
+        public string Goal { get; set; }
         public EStatus Status { get; set; }
         public ECategory Category { get; set; }
         public Comments Comment { get; set; }
         public Ratings Raiting { get; set; }
-        public Goals Goals { get; set; }
+       
     }
 
 
-    public enum EStatus { Succses, Fail, Active }
-    public enum ECategory { Bussines, Games, Education, Art }
+    public enum EStatus {
+
+        Active,
+        Succses,
+        Fail,
+        
+    }
+    public enum ECategory {
+        [Display(Name = "Bussines")]
+        Bussines,
+        [Display(Name = "Games")]
+        Games,
+        [Display(Name = "Education")]
+        Education,
+        [Display(Name = "Art")]
+        Art }
 
 
     public class Comments
@@ -57,13 +74,7 @@ namespace CoursProjet.Models
     }
 
 
-    public class Goals
-    {
-        public int ID { get; set; }
-        public int NeedMoney { get; set; }
-        public Projects Project { get; set; }
-        public string Goal { get; set; }
-    }
+    
 
 
     public class News
@@ -77,8 +88,8 @@ namespace CoursProjet.Models
     public class Subscribers
     {
         public int ID { get; set; }
-        public Users User { get; set; }
-        public Projects Project { get; set; }
+        public int UserID { get; set; }
+        public int ProjectID { get; set; }
     }
 }
         
