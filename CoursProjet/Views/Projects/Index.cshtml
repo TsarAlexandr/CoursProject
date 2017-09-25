@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 @model IEnumerable<CoursProjet.Models.Projects>
 
 @{
@@ -9,57 +11,188 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.NameProject)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NeedMoney)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Goal)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Status)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Category)
-                </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NameProject)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NeedMoney)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Goal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="~/css/master.css" rel="stylesheet">
+    <!-- SWITCHER -->
+    <link rel="stylesheet" id="switcher-css" type="text/css" href="~/assets/switcher/css/switcher.css" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="~/assets/switcher/css/color1.css" title="color1" media="all" data-default-color="true" />
+    <link rel="alternate stylesheet" type="text/css" href="~/assets/switcher/css/color2.css" title="color2" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="~/assets/switcher/css/color3.css" title="color3" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="~/assets/switcher/css/color4.css" title="color4" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="~/assets/switcher/css/color5.css" title="color5" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="~/assets/switcher/css/color6.css" title="color6" media="all" />
+   
+</head>
+<body class="m-listTable" data-scrolling-animations="true" data-equal-height=".b-items__cell">
+    <!-- Loader -->
+    <div id="page-preloader"><span class="spinner"></span></div>
+    <!-- Loader end -->
+    <!-- Start Switcher -->
+    <div class="switcher-wrapper">
+        <div class="demo_changer">
+            <div class="demo-icon customBgColor"><i class="fa fa-cog fa-spin fa-2x"></i></div>
+            <div class="form_holder">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="predefined_styles">
+                            <div class="skin-theme-switcher">
+                                <h4>Color</h4>
+                                <a href="#" data-switchcolor="color1" class="styleswitch" style="background-color:#f76d2b;"> </a>
+                                <a href="#" data-switchcolor="color2" class="styleswitch" style="background-color:#de483d;"> </a>
+                                <a href="#" data-switchcolor="color3" class="styleswitch" style="background-color:#228dcb;"> </a>
+                                <a href="#" data-switchcolor="color4" class="styleswitch" style="background-color:#00bff3;"> </a>
+                                <a href="#" data-switchcolor="color5" class="styleswitch" style="background-color:#2dcc70;"> </a>
+                                <a href="#" data-switchcolor="color6" class="styleswitch" style="background-color:#6054c2;"> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Switcher -->
+    <header class="b-topBar wow slideInDown" data-wow-delay="0.7s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-xs-6">
+                    <div class="b-topBar__lang">
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle='dropdown'>Language</a>
+                            <a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span class="b-topBar__lang-flag m-en"></span>EN<span class="fa fa-caret-down"></span></a>
+                            <ul class="dropdown-menu h-lang">
+                                <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span class="b-topBar__lang-flag m-en"></span>EN</a></li>
+                                <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span class="b-topBar__lang-flag m-es"></span>ES</a></li>
+                                <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span class="b-topBar__lang-flag m-de"></span>DE</a></li>
+                                <li><a class="m-langLink dropdown-toggle" data-toggle='dropdown' href="#"><span class="b-topBar__lang-flag m-fr"></span>FR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header><!--b-topBar-->
+
+    <div class="b-infoBar">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-xs-12">
+                    <div class="b-infoBar__select wow zoomInUp" data-wow-delay="0.5s">
+                        <form method="post" action="/">
+
+                            <div class="b-infoBar__select-one">
+                                <span class="b-infoBar__select-one-title">SORT BY</span>
+                                <select name="select2" class="m-select">
+                                    <option value="" selected="">Last Added</option>
+                                </select>
+                                <span class="fa fa-caret-down"></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--b-infoBar-->
+    <div class="b-items">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-sm-8 col-xs-12">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                        <div class="col-lg-4 col-md-6 col-xs-12">
+                            <div class="b-items__cell wow zoomInUp" data-wow-delay="0.5s">
+                                <div class="b-items__cars-one-img">
+                                    <img class='img-responsive' src="~/images/2017622114143.jpg" />
+                                    
+                                    <span class="b-items__cars-one-img-type m-premium">@Html.DisplayFor(modelItem => item.Status)</span>
+                                    
+                                </div>
+                                <div class="b-items__cell-info">
+                                    <div class="s-lineDownLeft b-items__cell-info-title">
+                                        <h2 class="">@Html.DisplayFor(modelItem => item.NameProject)</h2>
+                                    </div>
+                                    <p>@Html.DisplayFor(modelItem => item.Goal)</p>
+                                    <div class="row m-smallPadding">
+                                        <div class="col-xs-6">
+                                            <ul>
+                                                <li>Date : @Html.DisplayFor(modelItem => item.Date)</li>
+                                                <li>Used</li>
+                                                <li>8-Speed Automatic </li>
+                                                <li>@Html.DisplayFor(modelItem => item.Raiting)</li>
+                                            </ul>
+                                            <h5 class="b-items__cell-info-price">@Html.DisplayFor(modelItem => item.NeedMoney) $</h5>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            
+                                            <a href=Projects/Details/@item.ID class="btn m-btn">VIEW DETAILS<span class="fa fa-angle-right"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-4 col-xs-12">
+                    <aside class="b-items__aside">
+                        <h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">REFINE YOUR SEARCH</h2>
+                        <div class="b-items__aside-main wow zoomInUp" data-wow-delay="0.5s">
+                            <form>
+                                <div class="b-items__aside-main-body">
+                                    <div class="b-items__aside-main-body-item">
+                                        <label>SELECT A CATEGORY</label>
+                                        <div>
+                                            <select name="select1" class="m-select">
+                                                <option value="" selected="">Any Make</option>
+                                            </select>
+                                            <span class="fa fa-caret-down"></span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="b-items__aside-main-body-item">
+                                        <label>PRICE RANGE</label>
+                                        <div class="slider"></div>
+                                        <input type="hidden" name="min" value="100" class="j-min" />
+                                        <input type="hidden" name="max" value="1000" class="j-max" />
+                                    </div>
+                                    
+                                </div>
+                                <footer class="b-items__aside-main-footer">
+                                    <button type="submit" class="btn m-btn">FILTER VEHICLES<span class="fa fa-angle-right"></span></button><br />
+                                    <a href="">RESET ALL FILTERS</a>
+                                </footer>
+                            </form>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div><!--b-items-->
+    <!--Main-->
+    <script src="~/js/jquery-1.11.3.min.js"></script>
+    <script src="~/js/jquery-ui.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/modernizr.custom.js"></script>
+    <script src="~/assets/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+    <script src="~/js/waypoints.min.js"></script>
+    <script src="~/js/jquery.easypiechart.min.js"></script>
+    <script src="~/js/classie.js"></script>
+    <!--Switcher-->
+    <script src="~/assets/switcher/js/switcher.js"></script>
+    <!--Owl Carousel-->
+    <script src="~/assets/owl-carousel/owl.carousel.min.js"></script>
+    <!--bxSlider-->
+    <script src="~/assets/bxslider/jquery.bxslider.js"></script>
+    <!-- jQuery UI Slider -->
+    <script src="~/assets/slider/jquery.ui-slider.js"></script>
+    <!--Theme-->
+    <script src="~/js/jquery.smooth-scroll.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/jquery.placeholder.min.js"></script>
+    <script src="~/js/theme.js"></script>
+</body>
+</html>
