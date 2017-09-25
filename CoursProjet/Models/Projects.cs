@@ -30,6 +30,7 @@ namespace CoursProjet.Models
         
     }
     public enum ECategory {
+         All,
         [Display(Name = "Bussines")]
         Bussines,
         [Display(Name = "Games")]

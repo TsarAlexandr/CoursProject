@@ -19,9 +19,17 @@ namespace CoursProjet.Controllers
             _context = context;    
         }
 
+       
         // GET: Projects
-        public async Task<IActionResult> Index()
+        //public async Task<IActionResult> Index()
+        //{
+        //    return View(await _context.Projects.ToListAsync());
+        //}
+        public async Task<IActionResult> Index(ECategory category)
         {
+            if (category != 0) 
+                return View(await _context.Projects.Where(p => p.Category == category).ToListAsync());
+
             return View(await _context.Projects.ToListAsync());
         }
 

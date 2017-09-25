@@ -1,10 +1,22 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 @model IEnumerable<CoursProjet.Models.Projects>
+
 
 @{
     ViewData["Title"] = "Index";
 }
+<script>
+
+function srec()
+{
+    var x = document.getElementById("x").value;
+
+    document.location.href = "?category=" + x;
+            
+
+}
+</script>
 
 <h2>Index</h2>
 
@@ -120,8 +132,7 @@
                                         <div class="col-xs-6">
                                             <ul>
                                                 <li>Date : @Html.DisplayFor(modelItem => item.Date)</li>
-                                                <li>Used</li>
-                                                <li>8-Speed Automatic </li>
+                                                <li>Category  : @Html.DisplayFor(modelItem => item.Category)</li>
                                                 <li>@Html.DisplayFor(modelItem => item.Raiting)</li>
                                             </ul>
                                             <h5 class="b-items__cell-info-price">@Html.DisplayFor(modelItem => item.NeedMoney) $</h5>
@@ -141,28 +152,26 @@
                     <aside class="b-items__aside">
                         <h2 class="s-title wow zoomInUp" data-wow-delay="0.5s">REFINE YOUR SEARCH</h2>
                         <div class="b-items__aside-main wow zoomInUp" data-wow-delay="0.5s">
-                            <form>
+                            <form method="post">
                                 <div class="b-items__aside-main-body">
                                     <div class="b-items__aside-main-body-item">
                                         <label>SELECT A CATEGORY</label>
                                         <div>
-                                            <select name="select1" class="m-select">
-                                                <option value="" selected="">Any Make</option>
+                                            <select id="x" class="m-select">
+                                                @*<option value="" selected="">Any Make</option>*@
+                                                <option value="1">Busines</option>
+                                                <option value="2">Games</option>
+                                                <option value="3">Education</option>
+                                                <option value="4">Art</option>
                                             </select>
                                             <span class="fa fa-caret-down"></span>
                                         </div>
                                     </div>
                                     
-                                    <div class="b-items__aside-main-body-item">
-                                        <label>PRICE RANGE</label>
-                                        <div class="slider"></div>
-                                        <input type="hidden" name="min" value="100" class="j-min" />
-                                        <input type="hidden" name="max" value="1000" class="j-max" />
-                                    </div>
-                                    
+                                                                       
                                 </div>
                                 <footer class="b-items__aside-main-footer">
-                                    <button type="submit" class="btn m-btn">FILTER VEHICLES<span class="fa fa-angle-right"></span></button><br />
+                                    <input class="btn m-btn" value="FILTER Projects" onClick="srec()"<span class="fa fa-angle-right"></span></a><br />
                                     <a href="">RESET ALL FILTERS</a>
                                 </footer>
                             </form>
