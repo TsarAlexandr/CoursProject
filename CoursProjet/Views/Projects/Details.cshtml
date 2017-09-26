@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
     <html>
 @model CoursProjet.Models.Projects
 
@@ -158,8 +158,12 @@
                     </div>
                     <div class="col-sm-3 col-xs-12">
                         <div class="b-detail__head-price">
-                            <div class="b-detail__head-price-num">@Html.DisplayFor(model => model.NeedMoney) $</div>
+                            <div class="b-detail__head-price-num">Need : @Html.DisplayFor(model => model.NeedMoney) $</div>
                             
+                        </div>
+                        <div class="b-detail__head-price">
+                            <div class="b-detail__head-price-num">Current : @Html.DisplayFor(model => model.CurrentDonate) $</div>
+
                         </div>
                     </div>
                 </div>

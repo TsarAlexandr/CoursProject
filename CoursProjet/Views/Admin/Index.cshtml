@@ -1,0 +1,155 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="~/css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/style-responsive.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <section id="container" class="">
+
+        <header class="header white-bg">
+
+            <div class="top-nav notification-row">
+
+                <ul class="nav pull-right top-menu">
+
+                    <li id="mail_notificatoin_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <i class="icon-envelope-l"></i>
+                            <span class="badge bg-important">5</span>
+                        </a>
+                        <ul class="dropdown-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-blue"></div>
+                            <li>
+                                <p class="blue">You have 5 new messages</p>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
+                            <div class="log-arrow-up"></div>
+                                 <li>
+                                    <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+                                </li>
+                    </form>
+                   
+
+                </ul>
+
+            </div>
+        </header>
+
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+
+                <ul class="sidebar-menu">
+                    <li>
+                        <a class="" href=AdminProjects/Index>
+                             <i class="icon_genius"></i>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="" href=AdminUsers/Index>
+                            <i class="icon_piechart"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="profile-widget profile-widget-info">
+                            <div class="panel-body">
+                                <div class="col-lg-2 col-sm-2">
+                                    <h4>Alexandr Tsar</h4>
+                                    <h6>Administrator</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- page start-->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <section class="panel">
+                            <header class="panel-heading tab-bg-info">
+                                <ul class="nav nav-tabs">
+
+                                    <li>
+                                        <a data-toggle="tab" href="#profile">
+                                            <i class="icon-user"></i>
+                                            Profile
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </header>
+
+                            <!-- profile -->
+                            <div id="profile" class="tab-pane">
+                                <section class="panel">
+
+                                    <div class="panel-body bio-graph-info">
+                                        <h1>Bio Graph</h1>
+                                        <div class="row">
+                                            <div class="bio-row">
+                                                <p><span>First Name </span>: Alexandr</p>
+                                            </div>
+                                            <div class="bio-row">
+                                                <p><span>Last Name </span>: Tsar</p>
+                                            </div>
+                                            <div class="bio-row">
+                                                <p><span>Birthday</span>: 13 April 1998</p>
+                                            </div>
+                                            <div class="bio-row">
+                                                <p><span>Country </span>: Minsk</p>
+                                            </div>
+
+                                            <div class="bio-row">
+                                                <p><span>Email </span>: kripton98@mail.ru</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+            </div>
+        </section>
+    </section>
+
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.scrollTo.min.js"></script>
+    <script src="~/js/scripts.js"></script>
+   
+</body>
+</html>
+
+
+

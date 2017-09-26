@@ -12,6 +12,7 @@ namespace CoursProjet.Models
         public Users Athor { get; set; }
         public string NameProject { get; set; }
         public DateTime Date { get; set; }
+        public int CurrentDonate { get; set; }
         public int NeedMoney { get; set; }
         public string Goal { get; set; }
         public EStatus Status { get; set; }
@@ -75,7 +76,14 @@ namespace CoursProjet.Models
     }
 
 
-    
+    public class Donate
+    {
+        public int ID { get; set; }
+        public int UserId { get; set; }
+        public int ProjectId { get; set; }
+        public int DonateSum { get; set; }
+
+    }
 
 
     public class News
